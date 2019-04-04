@@ -1,0 +1,152 @@
+
+
+CRUD
+
+CREATE
+READ
+UPDATE
+DELETE
+
+
+ESTO SIFNIDICA QUE PODEMOS CREAER, ACTUALIZAR Y BORRAR UN ELEMENTO
+
+Crear un ELEMENTO
+
+
+var nuevoElemento = document.createElement ('p');
+
+parrafo.textContent = 'hola soy un párrafo' 
+
+var div = document.querySelector ('div');
+
+div.appendChild(parrafo);
+
+
+
+para que lo haga el usuario
+
+
+parrafo.textContent = 'hola soy un párrafo' 
+
+var prompt = prompt ('deja tu com' '')
+
+parrafo.textContent = prompt
+
+var div = document.querySelector ('div');
+
+div.appendChild(parrafo);
+
+
+
+-----------ON COSAS----------
+
+onclick --> js reacciona a es click
+ 
+onmousedown --> cuando se pasa el mouse 
+
+onkeypress --> enter y mandás cosas o cualquier letra que quieras
+
+onload --> solo cuando la página se terminó de cargar 
+
+onresize --> cuando el usuario achica la página
+
+onscroll --> cuando el usuario scrolea la caja lo sigue
+
+oninput --> cuando el usuario escribe data 
+
+onfocus/ onblur --> 
+
+
+--------------------------------------------------
+
+Existen 2 formas básicas de registrar un manejador de eventos 
+
+
+establecer una propiedad en el objeto
+
+
+---------------------------------------------------
+otra opción es registrar un evento 
+
+
+addEventListener 
+
+este método soporta 2 parámetros:
+
+tipo de evento: es un string con el nombre del tipo de vento 
+Manejador de evento: es una función que se invoca 
+
+
+var button = document.querySelector('button');
+button.addEventListener ('click',function(){
+    button.classList.add('rojo')
+}):
+
+un evento nos da información de lo que acaba de pasar, para prevenir la ejecición de un 
+evento por defecro utilizamos el método preventDefault
+
+para que cuando haga click que eso que hace siempre no lo haga, por ejemplo un link que no me lleve a otra 
+pagina sino que me muestre otra parte de la página 
+
+-------------------------------------------------------
+
+con el método String.fromCharcode podemos saber qué letra es
+ejemplo:
+
+eventos keypress, keydown y keyup  
+
+sabemos cuándo la tecla se presiona y cuando la deja de presionar 
+
+var body = document.querySelector ('body');
+body.addEventListener  ('keypress', function(evento){
+    console.log(evento.CharCode));
+    console.log(String.fromCharcode(evento.charCode));
+})
+
+
+}
+
+
+-------
+
+Cómo hacer un botón modal
+
+js
+var botonAbrir = document.getElementById("botonModal");
+var agarrarModal = document.getElementById("granDiv");
+var botonCerrar = document.getElementById("cerrarModal");
+
+botonAbrir.onclick = function () {
+   agarrarModal.classList.remove("displayNone")
+   botonAbrir.classList.add("displayNone")
+}
+
+botonCerrar.onclick = function () {
+   agarrarModal.classList.add("displayNone")
+   botonAbrir.classList.remove("displayNone")
+
+}
+
+pongo el boton en display none 
+luego lo saco con un onclick 
+
+para oscurecer un fondo 
+hay que hacer un div grande como el body para hacerle la transparencia 
+
+div que rodee al modal container 
+
+#modalwrapper 
+width 100%
+height 100%
+rgba(red, gree, blue, alpha)
+(0,0,0,0.5)
+luego ponerle la clase display none del modal
+para que se ponga en toda la pagina hay que sacarle el margin al body 
+
+
+el display none del botón se pone como !important para que desaparezca 
+
+
+luego sacar el height del body
+y poner VH para que ocupe toda la pantalla
+height 100vh
